@@ -1,0 +1,5 @@
+#Request sensors to bias
+
+---
+#Return success
+bool reply

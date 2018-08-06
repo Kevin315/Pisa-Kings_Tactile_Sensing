@@ -1,0 +1,5 @@
+sr_grasp_msgs/KCL_ContactStateStamped[] contacts
+geometry_msgs/PointStamped centre_of_mass 
+---
+KCL_GraspQuality quality
+

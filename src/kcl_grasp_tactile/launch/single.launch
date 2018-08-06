@@ -1,0 +1,9 @@
+<launch>
+  <machine name="oldpc" address="kcl-gsc-nano" env-loader="/home/robotics/Documents/ros_code/devel/env.sh"  user="robotics"/>
+
+	<rosparam command="load" file="$(find sr_grasp_tactile)/config/sensor_single.yaml" />
+	<group ns="finger1">
+     	   <node name="sensor" pkg="sr_grasp_tactile" type="daq_sensor"/>
+	</group>
+
+</launch>

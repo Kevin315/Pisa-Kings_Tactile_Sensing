@@ -1,0 +1,16 @@
+# Action for a user to grasp an object.
+# Implimented by sr_grasp_demo.
+# Send the Goal, the server will find objects in the scene, display them in
+# rviz and wait for you to select one. When you do sr_grasp_object is told to
+# grasp that object.
+# Goal
+---
+# Result
+---
+# Feedback
+# State shows what the node is currently doing.
+uint8 SEARCHING=0
+uint8 SELECTING=1
+uint8 GRABBING=2
+uint8 RELEASING=3
+uint8 state

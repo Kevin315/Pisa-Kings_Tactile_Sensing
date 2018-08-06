@@ -1,0 +1,27 @@
+<launch>
+<rosparam command="load" file="$(find sr_grasp_tactile)/config/sensor_params.yaml" />
+<arg name="novis" default="true" /> 
+  <machine name="oldpc" address="kcl-gsc-nano" env-loader="/home/robotics/Documents/ros_code/devel/env.sh" user="robotics"/>
+  <!--machine name="i5" address="kcl-gsc" env-loader="/home/core/Documents/ros_code/devel/env.sh" user="core"/-->
+<rosparam command="load" file="$(find sr_grasp_tactile)/config/sensor_params.yaml" />
+
+
+	<!--group ns="finger1">
+     	   <node machine="i5" name="sensor" pkg="sr_grasp_tactile" type="daq_sensor"/>
+	   <node machine="i5" name="contloc" pkg="sr_grasp_tactile" type="force_only"/>
+	   <node name="vis" pkg="sr_grasp_tactile" type="visualiser" unless="$(arg novis)"/>
+	</group-->
+
+	<group ns="finger2">
+     	   <node machine="oldpc" name="sensor" pkg="sr_grasp_tactile" type="daq_sensor"/>
+	   <node machine="oldpc" name="contloc" pkg="sr_grasp_tactile" type="contloc"/>
+	   <node name="vis" pkg="sr_grasp_tactile" type="visualiser" unless="$(arg novis)"/>
+    	   </group>
+	<group ns="finger3">
+     	   <node machine="oldpc" name="sensor" pkg="sr_grasp_tactile" type="daq_sensor"/>
+	   <node machine="oldpc" name="contloc" pkg="sr_grasp_tactile" type="contloc"/>
+	   <node name="vis" pkg="sr_grasp_tactile" type="visualiser" unless="$(arg novis)"/>	   
+	</group>
+  <node name="rviz_markers" pkg="sr_grasp_tactile" type="marker_viz"/>
+  <node name="pst_sensors" pkg="sr_grasp_tactile" type="pst_kcl_sensor"/>
+</launch>

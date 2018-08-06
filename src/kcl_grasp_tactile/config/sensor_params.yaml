@@ -1,0 +1,66 @@
+#fingers: [finger1, finger2, finger3, finger4, finger5]
+fingers: [rfdistal, thdistal, ffdistal, mfdistal, lfdistal]
+mfdistal:
+  frame: mfdistal
+lfdistal:
+  frame: lfdistal
+rfdistal:
+  frame: rfdistal
+  sensor:
+    rate: 100
+    device: /dev/comedi0
+    calibration: /calibration/FT10787.cal
+  contact:
+    a: 8.5
+    b: 16.0
+    c: 9.5
+    y00: -1.0
+    z0: 0.0
+    frot: !degrees -138.0
+    lm:
+      write_to_file: false
+      max_iter: 100
+      tau: 1e-3
+      e1: 1e-4
+      e2: 1e-4
+      e3: 1e-4
+thdistal:
+  frame: thdistal
+  sensor:
+    rate: 100
+    device: /dev/comedi1
+    calibration: /calibration/FT11585.cal
+  contact:
+    a: 11
+    b: 17.5
+    c: 11
+    y00: -2.0
+    z0: 2.0
+    frot: !degrees -138.0
+    lm:
+      write_to_file: false
+      max_iter: 100
+      tau: 1e-3
+      e1: 1e-4
+      e2: 1e-4
+      e3: 1e-4
+ffdistal:
+  frame: ffdistal
+  sensor:
+    rate: 100
+    device: /dev/comedi0
+    calibration: /calibration/FT7486.cal
+  contact:
+    a: 8.5
+    b: 16.0
+    c: 9.5
+    y00: -1.0
+    z0: 0.0
+    frot: !degrees -138.0
+    lm:
+      write_to_file: false
+      max_iter: 100
+      tau: 1e-3
+      e1: 1e-4
+      e2: 1e-4
+      e3: 1e-4

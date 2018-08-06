@@ -1,0 +1,10 @@
+#Request model to load
+int32 model_id
+shape_msgs/Mesh mesh
+geometry_msgs/PoseStamped initial_pose
+---
+#Return success
+geometry_msgs/PoseStamped rect_pose
+std_msgs/Float64 confidence
+bool reply
+

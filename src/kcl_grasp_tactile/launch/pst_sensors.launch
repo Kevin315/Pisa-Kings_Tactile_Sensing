@@ -1,0 +1,31 @@
+<launch>
+    <arg name="novis" default="true" />
+    <rosparam command="load" file="$(find sr_grasp_tactile)/config/pst_sensor_params.yaml"/>
+
+    <node name="pst_sensors" pkg="sr_grasp_tactile" type="pst_kcl_sensor"/>
+
+    <group ns="rfdistal">
+	   <node name="vis" pkg="sr_grasp_tactile" type="visualiser" unless="$(arg novis)"/>
+	</group>
+
+    <group ns="thdistal">
+	   <node name="vis" pkg="sr_grasp_tactile" type="visualiser" unless="$(arg novis)"/>
+	</group>
+
+    <group ns="ffdistal">
+	   <node name="vis" pkg="sr_grasp_tactile" type="visualiser" unless="$(arg novis)"/>
+	</group>
+
+	<group ns="mfdistal">
+	   <node name="vis" pkg="sr_grasp_tactile" type="visualiser" unless="$(arg novis)"/>
+	</group>
+
+	<group ns="lfdistal">
+	   <node name="vis" pkg="sr_grasp_tactile" type="visualiser" unless="$(arg novis)"/>
+	</group>
+
+    <node name="rviz_markers" pkg="sr_grasp_tactile" type="marker_viz" />
+</launch>
+
+<!-- vim: set ft=xml: -->
+

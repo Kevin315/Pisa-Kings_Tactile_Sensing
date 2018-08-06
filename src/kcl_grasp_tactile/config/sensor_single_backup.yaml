@@ -1,0 +1,21 @@
+fingers: [finger1]
+finger1:
+  frame: rfdistal
+  sensor:
+    rate: 100
+    device: /dev/comedi0
+    calibration: /calibration/FT13000.cal
+  contact:
+    a: 8.5
+    b: 16.0
+    c: 9.5
+    y00: -1.0
+    z0: 0.0
+    frot: !degrees -138.0
+    lm:
+      write_to_file: false
+      max_iter: 100
+      tau: 1e-3
+      e1: 1e-4
+      e2: 1e-4
+      e3: 1e-4

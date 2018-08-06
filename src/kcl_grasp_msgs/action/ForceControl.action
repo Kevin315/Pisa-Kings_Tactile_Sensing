@@ -1,0 +1,14 @@
+# Force Control.
+# Goal
+float64 set_point_upper #reference normal force up
+float64 set_point_lower #reference normal force down
+float64 start_degree #start_degree at joint 3
+---
+# Result
+uint8 outcome
+---
+# Feedback
+# State shows what the node is currently doing.
+float64 current_state #current normal force
+geometry_msgs/Vector3 normal #current normal direction
+geometry_msgs/Vector3 tangential #current tangential direction
