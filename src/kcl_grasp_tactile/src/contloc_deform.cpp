@@ -570,19 +570,11 @@ int Contact::setFinger(char *arg)
 	{
 		arg[i]=tolower(arg[i]);
 	}
-	if(strcmp(arg,"shadow")==0){
+	if(strcmp(arg,"finger1")==0){
 		ROS_INFO("Setting Shadow finger tip");
 		finger=2;
 		a = 8.5; b = 16.0; c = 9.5;
 		y00 = -1; z0 = 0.0; frot=-138*pi/180;
-	}
-	else if(strcmp(arg,"shadow_thumb")==0){
-		ROS_INFO("Setting Shadow thumb tip");
-		finger=2;
-		a = 11; //22 is with 2mm rubber
-		b = 17.5; //35 is with 2mm rubber
-		c = 11; //22 is with 2mm rubber
-		y00 = -2.0; z0 = 2.0; frot=-138*pi/180;
 	}
 	else if(strcmp(arg,"ellipse")==0){
 		finger=1;
